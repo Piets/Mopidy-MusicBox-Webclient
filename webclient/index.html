@@ -104,8 +104,8 @@
                 <a href="/Settings" onclick="toast('Loading...', 2000);">
                 <span class="navtxt"> Settings </span><i class="fa fa-cog"></i></a>
         </li>
-        <li id="navshutdown" data-icon="false">
-            <a href="system.html">
+        <li id="navsystem" data-icon="false">
+            <a href="#">
                 <span class="navtxt">System </span><i class="fa  fa-power-off"></i></a>
         </li>
         <li id="" data-icon="false">
@@ -332,6 +332,11 @@
     </div>
 </div>
 
+<div data-role="content" class="pane" id="systempane">
+    <h3>System</h3>
+        <a href="#" onclick="haltSystem(); return false;" data-role="button" data-rel="dialog" data-transition="slidedown" data-theme="b">Shutdown</a>
+        <a href="#" onclick="rebootSystem(); return false;" data-role="button" data-rel="dialog" data-transition="slidedown" data-theme="b">Reboot</a>
+</div>
 
 <div data-role="footer" data-tap-toggle="false" data-position="fixed" id="normalFooter">
         <div id="songinfo" class="">
