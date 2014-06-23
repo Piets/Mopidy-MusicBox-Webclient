@@ -3,9 +3,14 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="css/webclient.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.iscrollview.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/jquery.mobile.flatui.css" />
+
     <script src="js/jquery-1.10.2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/jquery.mobile.flatui.css"/>
-    <script type='application/javascript' src='js/fastclick.js'></script>
+    <script src="js/jquery.mobile-1.3.2.min.js"></script>
+    <script src='js/fastclick.js'></script>
     <script>
      //configuration
      var wsLocation = location.host + ':6680';  //for musicbox configuration and normal operation of mopidy http
@@ -25,21 +30,27 @@
             new FastClick(document.body);
         }, false);
     </script>
+
+    <!-- Meta Information -->
+    <meta name="description" content="MusicBox">
+    <meta name="author" content="Wouter van Wijk">
+    <meta name="copyright" content="(c) 2012-2013 Wouter van Wijk"/>
+
+    <!-- Web App Setup -->
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
     <meta name="apple-mobile-web-app-title" content="MusicBox">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+
     <meta name="HandheldFriendly" content="True">
     <meta name="MobileOptimized" content="320">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="MusicBox">
+
     <meta http-equiv="imagetoolbar" content="no"/>
+    <meta http-equiv="cleartype" content="on">
     <meta content="true" name="MSSmartTagsPreventParsing"/>
 
-    <meta http-equiv="cleartype" content="on">
-
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <!-- Fav Icons -->
     <meta name="msapplication-TileImage" content="images/favicon.png">
     <meta name="msapplication-TileColor" content="#34495e">
 
@@ -48,17 +59,7 @@
     <link rel="apple-touch-icon" sizes="120x120" href="images/Icon120.png">
     <link rel="apple-touch-icon" sizes="152x152" href="images/Icon152.png">
 
-
     <link rel="shortcut icon" type="image/x-icon" href="images/Icon.png">
-    <script src="js/jquery.mobile-1.3.2.min.js"></script>
-    <meta name="description" content="MusicBox">
-    <meta name="author" content="Wouter van Wijk">
-    <meta name="copyright" content="(c) 2012-2013 Wouter van Wijk"/>
-    <link href="css/webclient.css" rel="stylesheet">
-    <link href="css/jquery.mobile.iscrollview.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-
-    <!--        <link rel="stylesheet" href="css/add2home.css"> -->
 </head>
 
 <body>
@@ -116,11 +117,6 @@
             </div>
         </li>
     </ul>
-
-
-
-
-
 </div>
 
 
@@ -146,10 +142,6 @@
 <div data-role="popup" data-transition="none" data-theme="c" id="popupTracks">
     <div data-role="collapsible-set">
         <ul data-role="listview" data-icon="false" id="popupTracksLv">
-            <!--                        <li data-role="divider">
-                                    <span id="popupTrackName"></span>
-                                    </li>
-            -->
             <li>
                 <a href="#" onclick="return playTrack();">Play <span class="popupTrackName"></span></a>
             </li>
@@ -208,9 +200,6 @@
 
 <div data-role="header" data-tap-toggle="false" id="header" data-position="fixed" class="ui-grid-b header-breakpoint headerbtn">
     <a href="#panel" style="margin-left: -12px; padding-top: 2px;" id="headermenubtn"><i class="fa fa-align-justify"></i></a>
-<!--     <a id="headerplaylistsbtn" href="#" class="" onclick="switchContent('playlists' ); return false;">
-            <i class="fa fa-star"></i></a> &nbsp;
--->
     <h1 id="contentHeadline" >Musicbox</h1>
      <a id="headersearchbtn" href="#" class="ui-btn-icon-right headerbtn" onclick="switchContent('search' ); return false;">
             <i class="fa fa-search"></i></a>
@@ -359,23 +348,8 @@
         </div>
 </div>
 <div data-role="footer" data-tap-toggle="false" data-position="fixed" id="nowPlayingFooter">
-<!--     <p id="buttons">
 
-         <select name="flip-random" id="flip-random" data-role="slider" data-mini="true" >
-             <option value="off">Shuffle</option>
-             <option value="on">Shuffle</option>
-         </select>
-         <select name="flip-repeat" id="flip-repeat" data-role="slider" data-mini="true">
-             <option value="off">Repeat</option>
-             <option value="on">Repeat</option>
-         </select>
-
-
-    </p> -->
-    <!--&nbsp; <a href="#" onclick="doShuffle(); return false" title="Shuffle"><img src="images/icons/fork_21x24.png"-->
-    <!--id="shufflebt" alt=""/></a>-->
-
-    <p id="buttons"' style="float:right; margin-top: 20px; margin-right: 5px;">
+    <p id="buttons" style="float:right; margin-top: 20px; margin-right: 5px;">
             <a href="#" onclick="doRandom(); return false"><i class="fa fa-random" id="randombt"></i></a>
             &nbsp; <a href="#" onclick="doRepeat(); return false"><i class="fa fa-repeat" id="repeatbt"></i></a>
             &nbsp; <a href="#" onclick="doShuffle(); return false" title="Shuffle"><i class="fa fa-code-fork" id="shufflebt"></i></a>
@@ -394,10 +368,10 @@
 <!-- /page one -->
 <script type="text/javascript" src="/mopidy/mopidy.min.js"></script>
 <script type="text/javascript" src="js/iscroll-lite.js"></script>
-<!--        <script type="text/javascript" src="js/jquery.mobile.iscrollview-closure-min.js"></script> -->
+
 <script src="js/jquery.cookie.js"></script>
 <script src="js/jquery.truncate.min.js"></script>
-<!--        <script type="text/javascript" src="js/add2home.js" charset="utf-8"></script> -->
+
 <script src="js/controls.js"></script>
 <script src="js/library.js"></script>
 <script src="js/functionsvars.js"></script>
@@ -408,7 +382,6 @@
 <script type="text/javascript" src="js/lastfm.api.md5.js"></script>
 <script type="text/javascript" src="js/lastfm.api.js"></script>
 <script type="text/javascript" src="js/lastfm.api.cache.js"></script>
-
 <script src="js/lastfm.js"></script>
 
 <script src="js/gui.js"></script>
