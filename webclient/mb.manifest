@@ -5,13 +5,10 @@ CACHE:
 index.html
 /mopidy/mopidy.js
 
-/css/font-awesome.css
-/css/font-awesome.min.css
-/css/jquery.mobile.flatui.css
-/css/jquery.mobile.flatui.min.css
-/css/jquery.mobile.iscrollview-pull.css
-/css/jquery.mobile.iscrollview.css
-/css/webclient.css
+font-awesome.min.css
+query.mobile.flatui.min.css
+jquery.mobile.iscrollview.css
+webclient.css
 
 /fonts/FontAwesome.otf
 /fonts/fontawesome-webfont.eot
